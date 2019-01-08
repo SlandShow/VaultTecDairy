@@ -2,6 +2,7 @@
 REST service for Vault-Tec-Dairy (backend)
 
 [![Build Status](https://travis-ci.com/SlandShow/VaultTecDairy.svg?branch=master)](https://travis-ci.com/SlandShow/VaultTecDairy)
+[![License](https://img.shields.io/badge/license-MIT%20License-brightgreen.svg)](https://en.wikipedia.org/wiki/MIT_License)
 
 ### Stack (current): 
   1. Spring Boot 2
