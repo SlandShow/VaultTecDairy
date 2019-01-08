@@ -1,6 +1,8 @@
 # ⚡ VaultTecDairy ⚡
 REST service for Vault-Tec-Dairy (backend)
 
+[![Build Status](https://travis-ci.com/SlandShow/VaultTecDairy.svg?branch=master)](https://travis-ci.com/SlandShow/VaultTecDairy)
+
 ### Stack (current): 
   1. Spring Boot 2
   2. Hibernate
@@ -18,3 +20,4 @@ REST service for Vault-Tec-Dairy (backend)
 4. [H2](http://www.h2database.com/html/main.html "H2") 👽
 5. [Liquibase](https://www.liquibase.org/7 "Liquibase") 👑
 6. [Swagger](https://swagger.io/docs/specification/2-0/basic-structure/ "OpenAPI") 🎨
+7. [Travis CI](https://docs.travis-ci.com/user/tutorial/ "Pipiline") ⏳
