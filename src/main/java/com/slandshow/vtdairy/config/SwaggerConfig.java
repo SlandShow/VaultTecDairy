@@ -25,17 +25,7 @@ public class SwaggerConfig {
                 .build();
     }
 
-//    @Bean
-//    public Docket produceApi(){
-//        return new Docket(DocumentationType.SWAGGER_2)
-//                .apiInfo(apiInfo())
-//                .select()
-//                .apis(RequestHandlerSelectors.basePackage("com.slandshow.vtdairy.controller"))
-//                .paths(PathSelectors.any())
-//                .build();
-//    }
-
-    // Describe your apis
+    // Describe APIs
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Vault-tec Dairy Rest APIs")
@@ -43,14 +33,5 @@ public class SwaggerConfig {
                 .version("1.0-SNAPSHOT")
                 .build();
     }
-//
-//    // Only select apis that matches the given Predicates.
-//    private Predicate<String> paths() {
-//        // Match all paths except /error
-//        return Predicates.and(
-//                PathSelectors.regex("/customer.*"),
-//                Predicates.not(PathSelectors.regex("/error.*"))
-//        );
-//    }
 
 }

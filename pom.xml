@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.slandshow</groupId>
-    <artifactId>bank</artifactId>
+    <artifactId>vtdairy</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Vault-tec Dairy</name>
     <description></description>
