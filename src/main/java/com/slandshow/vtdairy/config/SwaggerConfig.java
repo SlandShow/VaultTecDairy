@@ -25,7 +25,7 @@ public class SwaggerConfig {
                 .build();
     }
 
-    // Describe APIs
+    /* Describe APIs */
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Vault-tec Dairy Rest APIs")
