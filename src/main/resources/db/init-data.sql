@@ -19,7 +19,7 @@ CREATE TABLE user (
 
 -- UserRole table --
 CREATE TABLE user_role (
-  user_id INT NOT NULL,
+  user_id INT NULL,
   role_id INT NULL,
   FOREIGN KEY(user_id) REFERENCES user(id),
   FOREIGN KEY(role_id) REFERENCES role(id)

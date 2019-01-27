@@ -1,9 +1,11 @@
 package com.slandshow.vtdairy.controller;
 
 import com.slandshow.vtdairy.models.Entry;
+import com.slandshow.vtdairy.models.User;
 import com.slandshow.vtdairy.models.dto.EntryDto;
 import com.slandshow.vtdairy.models.dto.RequestEntry;
 import com.slandshow.vtdairy.service.EntryService;
+import com.slandshow.vtdairy.service.UserService;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
@@ -22,6 +24,9 @@ public class EntryController {
 
     @Autowired
     private EntryService entryService;
+
+    @Autowired
+    private UserService userService;
 
     @ApiOperation(value = "Get entry by id",response = Entry.class)
     @ApiResponses(value = {
@@ -54,6 +59,12 @@ public class EntryController {
     @GetMapping("/criteria")
     public List<EntryDto> findEntryByCriteria(@ModelAttribute @Valid RequestEntry requestEntry) {
         return entryService.getEntryByCriteria(requestEntry);
+    }
+
+
+    @GetMapping("/user")
+    public User user() {
+        return userService.getUserById(1l);
     }
 
 }
