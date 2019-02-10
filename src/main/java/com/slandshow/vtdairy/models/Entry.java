@@ -18,7 +18,7 @@ import java.util.Date;
 public class Entry {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column(name = "entry_date")
@@ -27,7 +27,7 @@ public class Entry {
     @Column(name = "title")
     private String title;
 
-    @OneToOne()
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "content_id", referencedColumnName = "id")
     @JsonIgnore
     private Content content;

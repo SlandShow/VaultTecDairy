@@ -25,9 +25,6 @@ public class EntryController {
     @Autowired
     private EntryService entryService;
 
-    @Autowired
-    private UserService userService;
-
     @ApiOperation(value = "Get entry by id",response = Entry.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Entry details retrieved", response = Entry.class),
@@ -61,10 +58,15 @@ public class EntryController {
         return entryService.getEntryByCriteria(requestEntry);
     }
 
-
-    @GetMapping("/user")
-    public User user() {
-        return userService.getUserById(1l);
+    @ApiOperation(value = "Create entry by criteria",response = Entry.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Entry created", response = Entry.class),
+            @ApiResponse(code = 500, message = "Internal Server Error"),
+            @ApiResponse(code = 404, message= "Entry not found")
+    })
+    @PostMapping("/create")
+    public EntryDto createEntry(@ModelAttribute @Valid RequestEntry requestEntry) {
+        return entryService.saveEntry(requestEntry);
     }
 
 }

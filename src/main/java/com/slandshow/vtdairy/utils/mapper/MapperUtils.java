@@ -2,8 +2,10 @@ package com.slandshow.vtdairy.utils.mapper;
 
 import com.slandshow.vtdairy.models.Content;
 import com.slandshow.vtdairy.models.Entry;
+import com.slandshow.vtdairy.models.User;
 import com.slandshow.vtdairy.models.dto.ContentDto;
 import com.slandshow.vtdairy.models.dto.EntryDto;
+import com.slandshow.vtdairy.models.dto.UserDto;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
@@ -34,6 +36,10 @@ public class MapperUtils {
         );
 
         return entryDtos;
+    }
+
+    public UserDto mapperToUserDto(User user) {
+        return modelMapper.map(user, UserDto.class);
     }
 
 }

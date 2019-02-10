@@ -1,5 +1,6 @@
 package com.slandshow.vtdairy.service;
 
+import com.slandshow.vtdairy.models.Content;
 import com.slandshow.vtdairy.models.Entry;
 import com.slandshow.vtdairy.models.dto.EntryDto;
 import com.slandshow.vtdairy.models.dto.RequestEntry;
@@ -20,6 +21,7 @@ public class EntryService {
     @Autowired
     private EntryRepository entryRepository;
 
+
     @Autowired
     private MapperUtils mapperUtils;
 
@@ -29,7 +31,7 @@ public class EntryService {
         Optional<Entry> optional = entryRepository.findById(id);
         return mapperUtils.mapperToEntryDto(
                 optional.orElseThrow(
-                    () -> new NullPointerException("SOSI")
+                        () -> new NullPointerException("SOSI")
                 )
         );
     }
@@ -44,6 +46,18 @@ public class EntryService {
 
         List<Entry> entries = entryRepository.findAll(ModelSpecification.criteriaForEntry(requestEntry));
         return mapperUtils.mapperToEntryDtoList(entries);
+    }
+
+    public EntryDto saveEntry(RequestEntry requestEntry) {
+        log.debug("Save entry in database via request params");
+
+        Entry current = new Entry();
+        current.setTitle(requestEntry.getTitle());
+        Content content = new Content();
+        content.setContentText(requestEntry.getContentText());
+        current.setContent(content);
+
+        return mapperUtils.mapperToEntryDto(entryRepository.save(current));
     }
 
 }

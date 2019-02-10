@@ -14,6 +14,7 @@ public class RequestEntry {
 
     private String title;
     private String contentText;
+    private String login;
 
     @ApiParam(allowEmptyValue = true)
     public RequestEntry setTitle(String title) {
@@ -24,6 +25,12 @@ public class RequestEntry {
     @ApiParam(allowEmptyValue = true)
     public RequestEntry setContentText(String contentText) {
         this.contentText = contentText;
+        return this;
+    }
+
+    @ApiParam(allowEmptyValue = true)
+    public RequestEntry setLogin(String login) {
+        this.login = login;
         return this;
     }
 

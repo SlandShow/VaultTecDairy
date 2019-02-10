@@ -2,14 +2,14 @@
 
 -- Role table --
 CREATE TABLE role (
-  id INT NOT NULL,
+  id INT NOT NULL auto_increment,
   role_type VARCHAR NULL,
   PRIMARY KEY(id)
 );
 
 -- User table --
 CREATE TABLE user (
-  id INT NOT NULL,
+  id INT NOT NULL auto_increment,
   first_name VARCHAR(50) NULL,
   last_name VARCHAR(50) NULL,
   login VARCHAR(255) NULL,
@@ -27,14 +27,14 @@ CREATE TABLE user_role (
 
 -- Content table --
 CREATE TABLE content (
-  id INT NOT NULL,
+  id INT NOT NULL auto_increment,
   content_text VARCHAR(1000) NULL,
   PRIMARY KEY(id)
 );
 
 -- Entry table --
 CREATE TABLE entry (
-  id INT NOT NULL,
+  id INT NOT NULL auto_increment,
   entry_date TIMESTAMP NULL,
   user_id INT NULL,
   title VARCHAR(50) NULL,
