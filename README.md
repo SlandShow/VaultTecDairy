@@ -12,6 +12,29 @@ REST service for Vault-Tec-Dairy (backend)
   5. Swagger 2
   6. Liquibase
   
+## Build & Run   
+
+Build app via maven:
+```
+mvn clean install
+```
+
+Run it via mvn plugin ([documentation](https://docs.spring.io/spring-boot/docs/current/reference/html/using-boot-running-your-application.html "Spring Boot plugin")):
+```
+mvn spring-boot:run
+```
+### What next?  
+Use Swagger 2.0 to view API, if you run this service locally:
+
+[http://localhost:8080/VaultDairy/swagger-ui.html](http://localhost:8080/VaultDairy/swagger-ui.html "Swagger 2.0")
+
+You can also check h2 console:
+
+[http://localhost:8080/VaultDairy/h2-console/](http://localhost:8080/VaultDairy/h2-console/ "h2")
+
+Use default JDBC URL (`jdbc:h2:mem:testdb`)
+  
+  
 ## Dev 🛠️
 
 ### Reference:
