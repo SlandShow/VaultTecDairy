@@ -11,8 +11,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.function.Supplier;
 
 @Service
 @Slf4j
@@ -30,10 +33,12 @@ public class EntryService {
 
         Optional<Entry> optional = entryRepository.findById(id);
         return mapperUtils.mapperToEntryDto(
-                optional.orElseThrow(
-                        () -> new NullPointerException("SOSI")
-                )
+                optional.orElseThrow(() -> {
+                    String message = String.format("There is no entry present in database with 'id' = %s", id);
+                    return new EntityNotFoundException(message);
+                })
         );
+
     }
 
     public List<EntryDto> getAll() {

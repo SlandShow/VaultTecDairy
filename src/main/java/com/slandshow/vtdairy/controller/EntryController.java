@@ -31,7 +31,7 @@ public class EntryController {
             @ApiResponse(code = 500, message = "Internal Server Error"),
             @ApiResponse(code = 404, message= "Customer not found")
     })
-    @GetMapping("/{id}")
+    @GetMapping("/current/{id}")
     public EntryDto getEntryById(@PathVariable Long id) {
         return entryService.getById(id);
     }
