@@ -24,7 +24,6 @@ public class EntryService {
     @Autowired
     private EntryRepository entryRepository;
 
-
     @Autowired
     private MapperUtils mapperUtils;
 

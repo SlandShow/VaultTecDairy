@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import io.swagger.annotations.Api;
 
@@ -54,6 +55,7 @@ public class EntryController {
             @ApiResponse(code = 404, message= "Customer not found")
     })
     @GetMapping("/criteria")
+    @PreAuthorize("hasAuthority('ADMIN')")
     public List<EntryDto> findEntryByCriteria(@ModelAttribute @Valid RequestEntry requestEntry) {
         return entryService.getEntryByCriteria(requestEntry);
     }

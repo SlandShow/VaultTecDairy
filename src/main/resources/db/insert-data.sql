@@ -8,7 +8,7 @@ INSERT INTO user (id, first_name, last_name, login, password) VALUES (
   'Super',
   'User',
   'super-user@admin',
-  '$2a$11$uSXS6rLJ91WjgOHhEGDx..VGs7MkKZV68Lv5r1uwFu7HgtRn3dcXG'
+  '$2a$10$qtH0F1m488673KwgAfFXEOWxsoZSeHqqlB/8BTt3a6gsI5c2mdlfe'
 );
 
 INSERT INTO user_role (user_id, role_id) VALUES (1, 1);
