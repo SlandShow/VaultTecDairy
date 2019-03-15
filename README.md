@@ -33,7 +33,30 @@ You can also check h2 console:
 [http://localhost:8080/VaultDairy/h2-console/](http://localhost:8080/VaultDairy/h2-console/ "h2")
 
 Use default JDBC URL (`jdbc:h2:mem:testdb`)
-  
+
+### JWT token architecture  
+
+VaultTecDairy service secured via JWT token authorization & authentication. If you want to use it - you must generate token (Swagger UI also provides authorization and authentication). 
+
+### How to generate JWT token?
+
+Use cURL pattern:
+```
+curl client:secret@localhost:8080/oauth/token -d grant_type=password -d username=user -d password=pwd
+```
+As example:
+```
+curl vault-tec-dairy-id:XY7kmzoNzl100@localhost:8080/VaultDairy/oauth/token -d grant_type=password -d username=super-user@admin -d password=jwtpass
+```
+Also, you can use [Postman](https://www.getpostman.com/ "Postman tool").
+
+![postman not found](https://i.ibb.co/cDxBFCQ/token-path.png)
+
+When you need to use private endpoints in Swagger, just authorize. Format of token: `Bearer <token>`
+
+![bearer not found](https://i.ibb.co/tBDRLpn/bearer-token.png)
+
+`<token>` - is you personal generated JWT token.
   
 ## Dev 🛠️
 
@@ -45,3 +68,4 @@ Use default JDBC URL (`jdbc:h2:mem:testdb`)
 5. [Liquibase](https://www.liquibase.org/7 "Liquibase") 👑
 6. [Swagger](https://swagger.io/docs/specification/2-0/basic-structure/ "OpenAPI") 🎨
 7. [Travis CI](https://docs.travis-ci.com/user/tutorial/ "Pipiline") ⏳
+8. [JWT](https://jwt.io/ "JWT token") 🔑
